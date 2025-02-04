@@ -16,11 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from myapp.views import hello,about #Aqui importamos la funcion de saludo inicial.
+from myapp.views import hello,about,index,showProject,showTasks #Aqui importamos la funcion de saludo inicial.
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',hello),
+    path('',index),
     path('about/',about),
+    path('hello/<str:username>',hello),
+    path('projects/',showProject),
+    path('task/<int:identifier>',showTasks)
 
 ]
