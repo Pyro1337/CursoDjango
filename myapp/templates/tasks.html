@@ -1,0 +1,15 @@
+<h1>Tareas</h1>
+
+{% for project in projects %}
+    {% for task in tasks %}
+        {% if task.project.id == project.id %}
+            <h2>Proyecto: {{task.project.name}} {% if task.done == True %} ✔️Hecho {% else%} ✖️ Pendiente {% endif%}</h2>
+            <article>
+                <li>Titulo: {{task.title}}</li>
+                <li>Descripcion: {{task.description}}</li>
+                <li>Asignado a: {{task.asigned_to}}</li>
+            </article>
+        {% endif %}
+    {% endfor %}
+
+{% endfor %}
