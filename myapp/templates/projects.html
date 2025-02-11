@@ -1,3 +1,7 @@
+{% extends './layouts/base.html'%}
+
+{% block content %}
+
 <h1>Lista de Proyectos </h1>
 <!--Recorremos la lista de proyectos mediante un bucle for each-->
 {% for project in projects %}
@@ -5,3 +9,5 @@
         <li>{{project}}</li>
     </article>
 {% endfor %}
+
+{% endblock %}

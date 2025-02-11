@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from myapp.views import hello,about,index,showProjects,showTasks,showSpecificProject,showSpecificTasks #Aqui importamos la funcion de saludo inicial.
+from myapp.views import hello,about,index,showProjects,showTasks,showSpecificProject,showSpecificTasks,create_task #Aqui importamos la funcion de saludo inicial.
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,6 +27,7 @@ urlpatterns = [
     path('projects/<int:identifier>',showSpecificProject),
     path('task/',showTasks),
     path('task/<int:identifier>',showSpecificTasks),
+    path('create_task',create_task),
     
     
 

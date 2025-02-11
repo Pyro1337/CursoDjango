@@ -3,7 +3,8 @@ from .models import Project,Task #importamos de models los modelos Project y Tas
 from django.shortcuts import get_object_or_404 #Este es el import para el 404 not found
 from django.shortcuts import render #Importamos el render para las paginas html
 def index(request):
-    return HttpResponse("¡Hola, bienvenido a mi sitio esta es la seccion de inicio!")
+    #return HttpResponse("¡Hola, bienvenido a mi sitio esta es la seccion de inicio!")
+    return render (request,'home.html')
     #Pagina About
 def about(request):
     author = "Ivan Sanchez"
@@ -47,5 +48,8 @@ def showSpecificTasks(request,identifier):
     specific_task = get_object_or_404(Task, id = identifier)
     return HttpResponse('<h2>Lista de Tareas</h2>'+'<br>Title: ' +specific_task.title+"<br>Description: "+specific_task.description+"<br>Asigned to: "+specific_task.asigned_to
                         +"<br>Project: "+specific_task.project.name)
+
+def create_task (request):
+    return render(request, 'create_task.html')
 
 
