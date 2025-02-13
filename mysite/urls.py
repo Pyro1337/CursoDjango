@@ -19,16 +19,13 @@ from django.urls import path
 from myapp.views import hello,about,index,showProjects,showTasks,showSpecificProject,showSpecificTasks,create_task,create_project
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',index),
-    path('about/',about),
-    path('hello/<str:username>',hello),
-    path('projects/',showProjects),
-    path('projects/<int:identifier>',showSpecificProject),
-    path('task/',showTasks),
-    path('task/<int:identifier>',showSpecificTasks),
-    path('create_task',create_task),
-    path('create_project',create_project),
-    
-    
-
+    path('',index, name='index'),
+    path('about/',about,name='about'),
+    path('projects/',showProjects,name='projects'),
+    path('task/',showTasks,name='tasks'),
+    path('create_new_task',create_task,name='create_task'),
+    path('create_new_project',create_project,name='create_project'),
+    #path('projects/<int:identifier>',showSpecificProject),
+    #path('hello/<str:username>',hello,name='hello'),
+    #path('task/<int:identifier>',showSpecificTasks),
 ]
