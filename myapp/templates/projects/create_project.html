@@ -1,0 +1,14 @@
+{% extends 'layouts/base.html'%}
+{% block content%}
+<h1>Create a new Project</h1>
+<form method="POST"> <!--Se especifica el metodo POST-->
+    {% csrf_token%}<!--Se coloca antes de cada formulario-->
+    {{form.as_p}} <!--Se llama al formulario .as_p para que se muestre en parrafos-->
+
+    <button>
+        Save data
+    </button>
+</form>
+
+
+{% endblock%}

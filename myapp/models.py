@@ -5,8 +5,8 @@ from django.db import models
 
 class Project(models.Model): #Le estamos dando charField como campo texto y longitud de 200, al segundo le damos TextField
     name = models.CharField(max_length=200)
-    description = models.TextField()
-    #definimos la funcion str
+    description = models.CharField(max_length=200)
+    #definimos la funcion str para devolver el nombre del project al llamarlo y que  no quede como object
     def __str__(self):
         return self.name
 
